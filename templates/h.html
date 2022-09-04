@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@HomeBREW</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'athomebrew/css/bootstrap.css' %}" >
+    <script src="{% static 'athomebrew/js/bootstrap.js' %}"></script>
+
+</head>
+<body>
+<style>
+        body {background-color: #2B4162}
+    </style>
+        <div style="background-color:  #2B4162" class="navbar fixed-top position-sticky" >
+            <div class="container-fluid justify-content-center" >
+                <img src="{% static 'athomebrew/images/logo_short.svg' %}" alt="logo" style="width:300px; margin-top: 20px">
+            </div>
+        </div>
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

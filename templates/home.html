@@ -1,0 +1,229 @@
+{% extends 'h.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<style> body {background-color: #2B4162}
+
+#btn-brew-flip {
+  --bs-btn-color: #FFE8CF;
+  --bs-btn-bg: #2B4162;
+  --bs-btn-border-color: #FFE8CF;
+  --bs-btn-hover-color: #FFE8CF;
+  --bs-btn-hover-bg: #283B59;
+  --bs-btn-hover-border-color: #FFE8CF;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #FFE8CF;
+  --bs-btn-active-bg: #283B59;
+  --bs-btn-active-border-color: #FFE8CF;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #FFE8CF;
+  --bs-btn-disabled-bg: #2B4162;
+  --bs-btn-disabled-border-color: #FFE8CF;
+}
+
+#dropdown-brew {
+  --bs-dropdown-min-width: 10rem;
+  --bs-dropdown-padding-x: 0;
+  --bs-dropdown-padding-y: 0.5rem;
+  --bs-dropdown-spacer: 0.125rem;
+  --bs-dropdown-font-size: 1rem;
+  --bs-dropdown-color: #212529;
+  --bs-dropdown-bg: #FFE8CF;
+  --bs-dropdown-border-color: var(--bs-border-color-translucent);
+  --bs-dropdown-border-radius: 0.375rem;
+  --bs-dropdown-border-width: 1px;
+  --bs-dropdown-inner-border-radius: calc(0.375rem - 1px);
+  --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+  --bs-dropdown-divider-margin-y: 0.5rem;
+  --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-dropdown-link-color: #212529;
+  --bs-dropdown-link-hover-color: #1e2125;
+  --bs-dropdown-link-hover-bg: #e9ecef;
+  --bs-dropdown-link-active-color: #FFE8CF;
+  --bs-dropdown-link-active-bg: #0d6efd;
+  --bs-dropdown-link-disabled-color: #adb5bd;
+  --bs-dropdown-item-padding-x: 1rem;
+  --bs-dropdown-item-padding-y: 0.25rem;
+  --bs-dropdown-header-color: #6c757d;
+  --bs-dropdown-header-padding-x: 1rem;
+  --bs-dropdown-header-padding-y: 0.5rem;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  min-width: var(--bs-dropdown-min-width);
+  padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+  margin: 0;
+  font-size: var(--bs-dropdown-font-size);
+  color: var(--bs-dropdown-color);
+  text-align: left;
+  list-style: none;
+  background-color: var(--bs-dropdown-bg);
+  background-clip: padding-box;
+  border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+  border-radius: var(--bs-dropdown-border-radius);
+}
+.dropdown-menu>li>a{
+    color: #53442F;
+    background-color:#FFE8CF ;
+    width: 210px;
+    text-align: center;
+    --bs-dropdown-link-active-bg: #FCD7AD;
+    --bs-dropdown-link-hover-bg: #FCD7AD;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+    </head>
+
+<body>
+<p style="text-align:center; font-family:'Comic Sans MS'; color:#FFE8CF; font-size: 25px;">So, what are we making?</p>
+
+<div class="py-3 col-12 col-lg-5 container-fluid" style="display: grid">
+        <div class="py-3 col-12 col-lg-5 container-fluid" style="border-radius: 15px; text-align: center;">
+
+            <button id="btn-brew-flip" class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; width: 210px; margin-right: 10px; margin-bottom: 10px; font-size: 25px; border-radius: 15px;font-family:'Comic Sans MS">
+                Brew
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #FFE8CF; font-family:'Comic Sans MS'; font-size: 15px">
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/cold_brew.svg' %}" alt="home" style="margin-right: 20px">
+                    Cold Brew
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/vacuum_pot.svg' %}" alt="home" style="margin-right: 20px">
+                    Vacuum Pot
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/moka_pot.svg' %}" alt="home" style="margin-right: 20px">
+                    Moka Pot
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/french_press.svg' %}" alt="home" style="margin-right: 20px">
+                    French Press
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/espresso_machine.svg' %}" alt="home" style="margin-right: 20px">
+                    Espresso Machine
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/drip_brew.svg' %}" alt="home" style="margin-right: 20px">
+                    Drip Brew
+                </a></li>
+            </ul>
+
+
+            <button id="btn-brew-flip" class="btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; width: 210px; margin-bottom: 10px; font-size: 25px; border-radius: 15px;font-family:'Comic Sans MS">
+                Roast
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2" style="background-color: #FFE8CF; font-family:'Comic Sans MS'; font-size: 15px">
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/light_roast.svg' %}" alt="home" style="width: 45px">
+                    Light Roast
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/medium_roast.svg' %}" alt="home" style="width: 45px">
+                    Medium Roast
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/medium_dark_roast.svg' %}" alt="home" style="width: 45px">
+                    Medium-Dark Roast
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/dark_roast.svg' %}" alt="home" style="width: 45px">
+                    Dark Roast
+                </a></li>
+            </ul>
+
+
+            <button id="btn-brew-flip" class="btn" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; width: 210px; margin-right: 10px; font-size: 25px; border-radius: 15px;font-family:'Comic Sans MS">
+                Temp
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3" style="background-color: #FFE8CF; font-family:'Comic Sans MS'; font-size: 30px">
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/hot.svg' %}" alt="home" style="width: 100px; margin-bottom: 15px; margin-top: 15px">
+                    Hot
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/cold.svg' %}" alt="home" style="width: 100px">
+                    Cold
+                </a></li>
+            </ul>
+
+
+            <button id="btn-brew-flip" class="btn" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; width: 210px; font-size: 25px; border-radius: 15px;font-family:'Comic Sans MS">
+                Extras
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4" style="background-color: #FFE8CF; font-family:'Comic Sans MS'; font-size: 20px">
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/sugar.svg' %}" alt="home" style="width: 50px">
+                    Sugar
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/chocolate.svg' %}" alt="home" style="width: 50px">
+                    Chocolate
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/icecream.svg' %}" alt="home" style="width: 50px">
+                    Ice Cream
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/milk.svg' %}" alt="home" style="width: 50px">
+                    Milk
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/sparkling_water.svg' %}" alt="home" style="width: 50px">
+                    Soda Water
+                </a></li>
+                <li><a class="dropdown-item" href="#" style="text-align: left">
+                    <img src="{% static 'athomebrew/images/spices.svg' %}" alt="home" style="width: 50px">
+                    Spices
+                </a></li>
+            </ul>
+        </div>
+
+        <div class="py-3 col-11 col-lg-5 container-fluid" style="background-color:#FFE8CF; border-radius: 15px;">
+                <a href="/athomebrew/search/" style="font-family:'Comic Sans MS'; color:#53442F; font-size: 22px">
+                    <button class="py-3 col-12 col-lg-5 container-fluid btn" style="background-color:#FFBE63; border-radius: 15px; height: 65px; text-align: center; margin-bottom: 10px; border: none; font-size: 20px; font-weight: bold">
+                        Search
+                    </button>
+                </a>
+            <div class="py-3 col-12 col-lg-5 container-fluid " style="background-color:#FCD7AD; border-radius: 15px; height: 65px; text-align: center">
+                <p style="font-family:'Comic Sans MS'; color:#53442F; font-size: 20px">Start picking so we can start brewing</p>
+            </div>
+            <br>
+            <div style="text-align: center;margin-top: 20px; ">
+            <img src="{% static 'athomebrew/images/loading_coffee.svg' %}" alt="home" style="height: 250px">
+            </div>
+        </div>
+    <br>
+    <br>
+    <br>
+        <div class="navbar col-12 fixed-bottom" style="background-color: #1D2C43; height: 70px">
+            <div class="navbar fixed-bottom container-fluid py-3 col-10 col-lg-5">
+                <a href="/athomebrew/home" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/home_filled.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/courses_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/you_courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/you_course_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/user" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/user_empty.svg' %}" alt="home">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends 'h.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<style> body {background-color: #2B4162}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FCD7AD;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #53442FFF;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #53442FFF;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+        <p style="text-align:center; font-family:'Comic Sans MS'; color:#FFE8CF; font-size: 25px; margin-bottom: -5px">{{ user.username}}</p>
+        <div class="py-3 col-12 col-lg-5 container-fluid" style="text-align: center">
+            <img src="{% static 'athomebrew/images/profile_female.svg' %}" alt="home" style="margin-bottom: 20px">
+            <div class="py-3 col-11 col-lg-5 container-fluid" style="background-color:#FFE8CF; border-radius: 15px; text-align: left;">
+                <div style="margin-left: 15px"> Name: </div> <div class="py-3 col-11 col-lg-5 container-fluid" style="background-color:#FCD7AD; border-radius: 15px;">
+                {{ user.first_name}}   {{ user.last_name}}
+            </div>
+                <div style="margin-left: 15px"> Email: </div> <div class="py-3 col-11 col-lg-5 container-fluid" style="background-color:#FCD7AD; border-radius: 15px;">
+                {{ user.email}}
+            </div>
+                <div style="margin-left: 15px"> Password: </div> <div class="py-3 col-11 col-lg-5 container-fluid" style="background-color:#FCD7AD; border-radius: 15px;">
+                ************
+            </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-5 container-fluid" style="text-align: center">
+            <div class="col-11 col-lg-5 container-fluid align-content-center" style="background-color:#FFE8CF; border-radius: 15px; text-align: left; height: 40px;">
+                <div style="margin-left: 15px; font-size: 22px">
+                    COFFEE OF THE DAY
+                    <label class="switch" style="margin-top: 3px; margin-left: 130px;">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-11 col-lg-5 container-fluid align-content-start" style="margin-left: 15px; font-size: 15px; text-align: left; color: #BAB1A8">
+                    "COFFEE OF THE DAY" is an option that you can turn on, so that we can recommend a course for you to try. You will receive a notification every day to try out a new course, and ofcourse have a nice cup of coffee.
+                </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="navbar col-12 fixed-bottom" style="background-color: #1D2C43; height: 70px">
+            <div class="navbar fixed-bottom container-fluid py-3 col-10 col-lg-5">
+                <a href="/athomebrew/home" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/home_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/courses_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/you_courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/you_course_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/user" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/user_filled.svg' %}" alt="home">
+                </a>
+            </div>
+        </div>
+</body>
+</html>
+{% endblock %}

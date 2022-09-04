@@ -1,0 +1,94 @@
+{% extends 'h.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<style> body {background-color: #2B4162} </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <p style="text-align:center; font-family:'Comic Sans MS'; color:#FFE8CF; font-size: 25px;">
+            <a href="javascript:history.back()" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; size: auto; margin-right: auto; text-decoration: none; color:#FFE8CF; font-size: 25px; text-align: left" role="button">
+                <
+            </a>
+            Tips & Tricks</p>
+         <div class="py-3 col-12 col-lg-5 container-fluid text-center" style="text-align: center;">
+            <div class=" py-3 col-11 col-lg-5 container-fluid gap-3 text-center" style="background-color:#FFE8CF; border-radius: 15px; display: grid;text-align: center;">
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 1</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 2</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 3</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 4</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 5</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 6</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 7</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 8</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 9</p>
+                        </div>
+                    </div>
+                <div class="card text-center" style=" text-decoration: none;background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; height: 70px">
+                            <p class="text-center" style="color: #53442F; font-size: 25px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto;">Tip & Trick 10</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="navbar col-12 fixed-bottom" style="background-color: #1D2C43; height: 70px">
+            <div class="navbar fixed-bottom container-fluid py-3 col-10 col-lg-5">
+                <a href="/athomebrew/home" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/home_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/courses_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/you_courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/you_course_filled.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/user" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/user_empty.svg' %}" alt="home">
+                </a>
+            </div>
+        </div>
+</body>
+</html>
+{% endblock %}

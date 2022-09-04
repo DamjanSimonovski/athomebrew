@@ -1,0 +1,72 @@
+{% extends 'h.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<style> body {background-color: #2B4162}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+        <p style="text-align: center; font-family:'Comic Sans MS'; color:#FFE8CF; font-size: 25px;">
+            <a href="javascript:history.back()" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; size: auto; margin-right: auto; text-decoration: none; color:#FFE8CF; font-size: 25px; text-align: left" role="button">
+                <
+            </a>
+            {{ single.title}}
+        </p>
+
+        <div class="py-3 col-12 col-lg-5 container-fluid text-center" style="text-align: center;">
+            <div class=" py-3 col-11 col-lg-5 container-fluid gap-3 text-center" style="background-color:#FFE8CF; border-radius: 15px; display: grid;text-align: center;">
+                    <button class="card text-center" style="background-color: #FCD7AD;border-radius: 25px;text-align: center; border: none">
+                            <img src="{{ MEDIA_URL }}{{ single.image.url }}" class="card-img text-center" alt="..." style="border-radius: 25px; margin-left: auto; margin-right: auto; padding: 10px; display: block; margin-top: auto;">
+                        <div class="card-body" style="text-align: center; margin-left: auto; margin-right: auto; ">
+                            <p class="text-start" style="color: #53442F; font-size: 20px; font-weight: bolder; text-align: center; margin-left: auto; margin-right: auto; white-space: pre-line; text-justify: distribute-all-lines; overflow-wrap: break-word;">{{ single.content}}</p>
+                        </div>
+                    </button>
+            </div>
+        </div>
+        <div class="py-3 col-12 col-lg-5 container-fluid" style="text-align: center">
+{#            <a href="/athomebrew/rate/">#}
+            <button class="col-11 col-lg-5 container-fluid align-content-center" style="background-color:#FFE8CF; border-radius: 15px; height: 50px; font-size: 30px; color: #53442F; font-family:'Comic Sans MS'; font-weight: bold; text-align: center; border: none">
+                RATE THE COURSE
+            </button>
+{#            </a>#}
+        </div>
+        <div class="py-3 col-12 col-lg-5 container-fluid" style="text-align: center">
+            <a href="/athomebrew/display/{{ single.id }}/quiz">
+            <button class="col-11 col-lg-5 container-fluid align-content-center" style="background-color:#FFE8CF; border-radius: 15px; height: 50px; font-size: 20px; color: #53442F; font-family:'Comic Sans MS'; font-weight: bold;text-align: center; border: none">
+                TAKE A QUIZ AND GET CERTIFIED
+            </button>
+            </a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="navbar col-12 fixed-bottom" style="background-color: #1D2C43; height: 70px">
+            <div class="navbar fixed-bottom container-fluid py-3 col-10 col-lg-5">
+                <a href="/athomebrew/home" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/home_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/courses_filled.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/you_courses" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/you_course_empty.svg' %}" alt="home">
+                </a>
+                <a href="/athomebrew/user" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem;" role="button">
+                    <img src="{% static 'athomebrew/images/user_empty.svg' %}" alt="home">
+                </a>
+            </div>
+        </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'lg.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+    <style> body {background-color: #FFE8CF}
+    .reg{
+        color:#2B4162;
+    }
+
+    #btn-brew {
+    --bs-btn-color: #FFE8CF;
+    --bs-btn-bg: #2B4162;
+    --bs-btn-border-color: #2B4162;
+    --bs-btn-hover-color: #FFE8CF;
+    --bs-btn-hover-bg: #283B59;
+    --bs-btn-hover-border-color: #283B59;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #FFE8CF;
+    --bs-btn-active-bg: #283B59;
+    --bs-btn-active-border-color: #283B59;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #FFE8CF;
+    --bs-btn-disabled-bg: #2B4162;
+    --bs-btn-disabled-border-color: #2B4162;
+    }
+    #btn-brew-flip {
+    --bs-btn-color: #FFE8CF;
+    --bs-btn-bg: #2B4162;
+    --bs-btn-border-color: #FFE8CF;
+    --bs-btn-hover-color: #FFE8CF;
+    --bs-btn-hover-bg: #283B59;
+    --bs-btn-hover-border-color: #FFE8CF;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #FFE8CF;
+    --bs-btn-active-bg: #283B59;
+    --bs-btn-active-border-color: #FFE8CF;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #FFE8CF;
+    --bs-btn-disabled-bg: #2B4162;
+    --bs-btn-disabled-border-color: #FFE8CF;
+    }
+    </style>
+
+
+<div class="container text-center pt-3">
+    <img src="{% static 'athomebrew/images/logo.svg' %}" alt="logo">
+</div>
+
+<div class="container py-3 col-10 col-lg-5">
+	<form method="POST" class="reg">
+        <div class="form-group d-grid col-12 mx-auto pt-2 align-content-center">
+            <hr>
+		{% csrf_token %}
+            {{ register_form|crispy }}
+        </div>
+        <div class="d-grid gap-2 col-12 pt-2 align-content-center">
+        <button id="btn-brew" class="btn" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; border-radius: 15px" role="button">Register</button>
+            <a id="btn-brew-flip" class="btn" href="/athomebrew/login_register" role="button" style="--bs-btn-padding-y: .90rem; --bs-btn-padding-x: .10rem; border-radius: 15px" role="button">Back</a>
+
+	</div>
+    </form>
+</div>
+</div>
+
+{% endblock %}
